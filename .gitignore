@@ -1,6 +1,10 @@
-# General ignore settings
-db/secrets/*
-!db/secrets/.gitkeep
 
 # db ignore settings
 db/data
+db/secrets/*
+!db/secrets/.gitkeep
+
+# www ignore settings
+www/data
+www/secrets/*
+!www/secrets/.gitkeep

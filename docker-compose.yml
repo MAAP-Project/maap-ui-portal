@@ -2,6 +2,30 @@ version: "3.9"
 
 services:
 
+  www:
+    container_name: 'maap-portal-www'
+    build:
+      dockerfile: Dockerfile
+      context: ./www
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_NAME_FILE=/run/secrets/WORDPRESS_DB_NAME
+      - WORDPRESS_DB_USER_FILE=/run/secrets/WORDPRESS_DB_USER
+      - WORDPRESS_DB_PASSWORD_FILE=/run/secrets/WORDPRESS_DB_PASSWORD
+    image: 'maap-portal-www'
+    ports:
+      - '8080:80'
+    restart: always
+    secrets:
+      - WORDPRESS_DB_NAME
+      - WORDPRESS_DB_USER
+      - WORDPRESS_DB_PASSWORD
+    volumes:
+      - "./www/data:/var/www/html"
+
   db:
     container_name: 'maap-portal-db'
     build:
@@ -36,3 +60,9 @@ secrets:
     file: ./db/secrets/MYSQL_USER.txt
   MYSQL_PASSWORD:
     file: ./db/secrets/MYSQL_PASSWORD.txt
+  WORDPRESS_DB_NAME:
+    file: ./www/secrets/WORDPRESS_DB_NAME.txt
+  WORDPRESS_DB_USER:
+    file: ./www/secrets/WORDPRESS_DB_USER.txt
+  WORDPRESS_DB_PASSWORD:
+    file: ./www/secrets/WORDPRESS_DB_PASSWORD.txt

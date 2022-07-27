@@ -1,11 +1,12 @@
 export NAME_PREFIX = maap-portal
 export DB_CONTAINER_NAME = $(NAME_PREFIX)-db
+export WWW_CONTAINER_NAME = $(NAME_PREFIX)-www
 export RUN_OPTIONS = 
 
-build-all:	## Builds application for Docker Compose
+build:	## Builds all services using Docker Compose
 	docker-compose build
 
-build-all-nocache:	## Builds application for Docker Compose without the cache
+build-nocache:	## Builds all applications using Docker Compose without the cache
 	docker-compose build --no-cache
 
 build-db:		## Builds db service image
@@ -13,6 +14,12 @@ build-db:		## Builds db service image
 
 build-db-no-cache:	## Builds db service image without the cache
 	docker-compose build db --no-cache
+
+build-www:	## Builds www service image
+	docker-compose build www
+
+build-www-no-cache:	## Builds www service image without the cache
+	docker-compose build www --no-cache
 
 destroy:	## Stops running app locally and removes Docker container images requiring a rebuild
 	docker-compose down --rmi all
@@ -23,8 +30,11 @@ list-images: ## List images related to this project
 login-db: ## Open terminal window using db container
 	docker exec -it $(DB_CONTAINER_NAME) /bin/bash
 
+login-www: ## Open terminal window using www container
+	docker exec -it $(WWW_CONTAINER_NAME) /bin/bash
+
 open: ## open default browser to login selection interface
-	open https://localhost/
+	open https://localhost:8080/
 
 remove-containers:  ## Remove all containers related to this project.
 	docker container ls --all | awk '{print $$2}' | grep "$(NAME_PREFIX)" | xargs -I {} docker rm -f {}
@@ -38,6 +48,9 @@ restart:	## Restarts the application locally, does not reload environment variab
 restart-db:	## Restarts the db service
 	docker-compose restart db
 
+restart-www:	## Restarts the www service
+	docker-compose restart www
+
 start:	## Starts up the application using Docker Compose
 	docker-compose up $(RUN_OPTIONS)
 
@@ -50,11 +63,20 @@ start-db:	## Starts up the db service using Docker Compose
 start-db-detached:	RUN_OPTIONS = "-d" ## Starts up the application with Docker Compose in detached mode
 start-db-detached: start-db
 
+start-www:	## Starts up the www service using Docker Compose
+	docker-compose up $(RUN_OPTIONS) www
+
+start-www-detached:	RUN_OPTIONS = "-d" ## Starts up the application with Docker Compose in detached mode
+start-www-detached: start-www
+
 stop:	## Stops all running services
 	docker-compose stop
 
 stop-db:	## Stops running db service
 	docker-compose stop db
+
+stop-www:	## Stops running www service
+	docker-compose stop www
 
 watch-containers: ## Display a list of running containers that refreshes periodically
 	watch docker container ls
