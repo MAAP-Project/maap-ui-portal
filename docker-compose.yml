@@ -11,7 +11,7 @@ services:
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/MYSQL_ROOT_PASSWORD
       - MYSQL_DATABASE_FILE=/run/secrets/MYSQL_DATABASE
       - MYSQL_USER_FILE=/run/secrets/MYSQL_USER
-      - MYSQL_PASSWORD=/run/secrets/MYSQL_PASSWORD
+      - MYSQL_PASSWORD_FILE=/run/secrets/MYSQL_PASSWORD
     healthcheck:
         test: "exit 0"
     image: 'maap-portal-db'
