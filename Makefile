@@ -11,7 +11,7 @@ build-all-nocache:	## Builds application for Docker Compose without the cache
 build-db:		## Builds db service image
 	docker-compose build db
 
-build-db--no-cache:	## Builds db service image with the cache
+build-db-no-cache:	## Builds db service image without the cache
 	docker-compose build db --no-cache
 
 destroy:	## Stops running app locally and removes Docker container images requiring a rebuild
