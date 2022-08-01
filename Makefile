@@ -33,8 +33,8 @@ login-db: ## Open terminal window using db container
 login-www: ## Open terminal window using www container
 	docker exec -it $(WWW_CONTAINER_NAME) /bin/bash
 
-open: ## open default browser to login selection interface
-	open https://localhost:8080/
+open: ## open default browser to view the portal
+	open http://localhost:8080/
 
 remove-containers:  ## Remove all containers related to this project.
 	docker container ls --all | awk '{print $$2}' | grep "$(NAME_PREFIX)" | xargs -I {} docker rm -f {}
