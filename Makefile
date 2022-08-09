@@ -36,6 +36,9 @@ login-www: ## Open terminal window using www container
 open: ## open default browser to view the portal
 	open http://localhost:8080/
 
+open-login: ## open default browser to login to the portal (bypass CAS)
+	open http://localhost:8080/wp-login.php?external=wordpress
+
 remove-containers:  ## Remove all containers related to this project.
 	docker container ls --all | awk '{print $$2}' | grep "$(NAME_PREFIX)" | xargs -I {} docker rm -f {}
 
