@@ -3,6 +3,8 @@
 db/data
 db/secrets/*
 !db/secrets/.gitkeep
+db/init/*
+!db/init/.gitkeep
 
 # www ignore settings
 www/data
