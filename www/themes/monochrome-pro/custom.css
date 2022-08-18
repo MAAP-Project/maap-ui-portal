@@ -1,0 +1,616 @@
+/* BEGIN NASA MAAP STYLESHEET */
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i|Open+Sans:400,400i,700|Ropa+Sans:400,400i|Source+Code+Pro:400,700&subset=latin-ext');
+
+:root {
+    /* https://nasa.github.io/nasawds-site/components/colors/
+    --color-nasa-primary: #105bd8;
+    --color-nasa-primary-darker: #0b3d91;
+    --color-nasa-primary-darkeset: #061f4a;
+    --color-nasa-base: #212121;
+    --color-nasa-gray-dark: #323a45;
+    --color-nasa-gray-light: #aeb0b5;
+ */
+    --color-blue-light2: #9cb7e6;
+    --color-blue-light: #0098DB;
+    --color-blue-dark: #00549F;
+    --color-blue-2-light: #00338D;
+    --color-blue-2-dark: #002664;
+    --color-green-light: #008542;
+    --color-green-dark: #284E36;
+    --color-yellow-light: #FDC82F;
+    --color-yellow-dark: #B88B00;
+    --color-orange-light: #E37222;
+    --color-orange-dark: #9D5116;
+    --color-red-light: #D0103A;
+    --color-red-dark: #822433;
+    --color-link-visited: #4C2C92;
+    --color-black: #000000;
+    --color-grey-light: #D5D6D2;
+    --color-grey-light2: #9A9B9C;
+    --color-grey-light3: #747678;
+    --color-grey-dark: #4D4F53;
+    --color-silver: #8B8D8E;
+    --color-white: #FFFFFF;
+}
+
+body {
+    font-family: "Merriweather",serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Ropa Sans", sans-serif;
+	width: inherit;
+}
+
+a {
+  color: var(--color-blue-dark);
+}
+
+a:hover {
+/*   background-color: var(--color-blue-dark); */
+  color: var(--color-blue-dark);
+  text-decoration: underline;
+}
+
+a:visited: {
+  color: var(--color-link-visited);
+}
+
+a.external {
+  text-decoration: underline dotted var(--color-blue-dark);
+}
+
+a.external:visited {
+  text-decoration: underline dotted var(--color-link-visited);
+}
+
+a.button {
+  font-family: "Ropa Sans";
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 2em;
+  padding: .2em .5em .2em .5em;
+  margin: .5em 1em .5em 1em;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  background-color: var(--color-blue-light);
+  border-bottom: 3px solid var(--color-blue-dark);
+  white-space: nowrap;
+}
+
+a.button-green {
+  background-color: var(--color-green-light);
+  border-bottom: 3px solid var(--color-green-dark);
+}
+
+a.button-disabled {
+  background-color: var(--color-grey-light2);
+  border-bottom: 3px solid var(--color-grey-dark);
+  cursor:default;
+}
+
+a.button-red {
+  background-color: var(--color-red-light);
+  border-bottom: 3px solid var(--color-red-dark);
+}
+
+
+h1 {
+    font-family: "Ropa Sans";
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: .5em;
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    color: var(--color-black);
+}
+
+h2 {
+  font-family: "Ropa Sans";
+  font-weight: bold;
+  margin-bottom: .5em;
+  font-size: 2rem;
+  color: var(--color-black);
+}
+
+h3 {
+  font-family: "Ropa Sans";
+  font-weight: bold;
+  margin-bottom: .5em;
+  font-size: 1.5rem;
+  color: var(--color-black);
+}
+
+
+h4 {
+  font-family: "Ropa Sans";
+  font-weight: normal;
+  margin-bottom: .5em;
+  font-size: 1.2rem;
+  color: var(--color-black);
+}
+
+div.paragraph {
+  max-width: 50em;
+  margin-bottom: 0.5em;
+  line-height: 1.4em;
+}
+
+div.ui-paragraph {
+  font-family: "Opens Sans",sans-serif;
+  font-size: 1em;
+  max-width: 50em;
+  margin-bottom: 0.5em;
+}
+
+
+div.code {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1em;
+  border-left: 2px solid var(--color-blue-light);
+  margin-top: .5em;
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-bottom: .5em;
+  max-width: 60em;
+}
+
+span.code {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1em;
+}
+
+span.pre {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1em;
+}
+
+table.styled-green {
+  border: none;
+  border-collapse: collapse;
+}
+
+table.styled-green th {
+  background-color: var(--color-green-light);
+  color: white;
+  border-bottom: 2px solid var(--color-grey-dark);
+  font-family: "Ropa Sans";
+  font-size: 1rem;
+  text-align: left;
+  padding: 4px 1em 4px 6px;
+}
+
+table.styled-green th:first-child {
+  border-top-left-radius: 3px;
+}
+
+table.styled-green th:last-child {
+  border-top-right-radius: 3px;
+}
+
+table.styled-green td {
+  font-family: "Open Sans",Helvetica;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--color-grey-light2);
+  padding: 4px 1em 4px 6px;
+}
+
+table.compact td,th {
+  padding: 2px 4px 2px 4px;
+}
+
+/* 
+ul {
+    list-style: none;
+    list-style-position: outside;
+    padding: 0;
+    margin-top: .5em;
+}
+
+li {
+    padding-left: 18px;
+    text-indent: -18px;
+}
+
+li:before {
+    content: "\2022";
+    padding-right: 12px;
+    color: var(--color-silver); 
+}
+ */
+
+div.alert-message {
+  background-color: var(--color-yellow-light);
+  border: 2px solid var(--color-yellow-dark);
+  color: black;
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 4px 8px 4px 8px;
+}
+
+div.navbar {
+  background: var(--color-blue-dark);
+  color:white;
+  width: 100%;
+  position:fixed;
+  margin-left: -40px;
+  margin-top: -10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 24px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+span.site-header {
+  text-align: left;
+  font-family: "Ropa Sans",sans-serif;
+  font-size: 2em;
+  color:white;
+  padding-left: 24px;
+}
+
+span.navigation-button-cluster {
+  text-align: right;
+  color:white;
+  float:right;
+  margin-right: 24px;
+}
+
+
+a.navbutton {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 1.5em;
+  color:white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-left: 2em;
+  text-decoration: none;
+}
+
+a.nav-active {
+  color: white;
+  background: var(--color-blue-light2);
+  text-decoration: none;
+}
+
+img.avatar {
+    margin-right: 8px;
+}
+
+.genesis-nav-menu a:hover {
+    text-decoration: none;
+}
+
+.genesis-nav-menu .sub-menu {
+    z-index: 9999;
+}
+
+.genesis-nav-menu .sub-menu::before {
+    left: 27px;
+    border-bottom: 5px solid var(--color-blue-dark);
+}
+
+.genesis-nav-menu .sub-menu a {
+    font-size: 18px;
+}
+
+.genesis-nav-menu > .menu-item .sub-menu > .menu-item:first-child, .genesis-nav-menu > .menu-item > .sub-menu > .menu-item:last-child, .genesis-nav-menu .sub-menu a  {
+    background-color: var(--color-blue-dark);
+}
+
+label {
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+}
+
+
+input {
+  font-family: "Open Sans",sans-serif;
+}
+
+input[type=checkbox] {
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+  margin-right: 1em;
+}
+
+
+input[type=text], input[type=password] {
+  border: 2px solid var(--color-grey-light);
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+  border-radius: 4px;
+  padding: 6px .5em;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+
+
+input[type=text]:focus,input[type=password]:focus {
+  border: 2px solid var(--color-blue-light);
+  outline: none;
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+  border-radius: 4px;
+  padding: 6px .5em;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+
+
+textarea {
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+  height: 208px;
+  padding: 6px .5em;
+  box-sizing: border-box;
+  border: 2px solid var(--color-grey-light);
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+textarea:focus {
+  font-family: "Open Sans",sans-serif;
+  font-size: 1em;
+  height: 208px;
+  padding: 6px .5em;
+  box-sizing: border-box;
+  border: 2px solid var(--color-blue-light);
+  outline: none;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+
+input[type=submit] {
+    font-family: "Ropa Sans", sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: .2em .5em .2em .5em;
+    margin: .5em 1em .5em 0px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: var(--color-blue-light);
+    border-bottom: 3px solid var(--color-blue-dark);
+}
+
+input[type=submit]:disabled {
+    font-family: "Ropa Sans", sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: .2em .5em .2em .5em;
+    margin: .5em 1em .5em 0px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: var(--color-grey-light);
+    border-bottom: 3px solid var(--color-grey-dark);
+    cursor:not-allowed;
+}
+
+input[type=reset] {
+    font-family: "Ropa Sans",sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: .2em .5em .2em .5em;
+    margin: .5em 1em .5em 0px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: var(--color-orange-light);
+    border-bottom: 3px solid var(--color-orange-dark);
+}
+
+i.hero-icon {
+  font-size: 10em;
+}
+
+
+.color-blue {
+  color: var(--color-blue-light);
+}
+
+.color-orange {
+  color: var(--color-orange-light);
+}
+
+.color-red {
+  color: var(--color-red-light);
+}
+
+.color-green {
+  color: var(--color-green-light);
+}
+
+div.color-grey {
+  background-color: var(--color-grey-light2);
+  color: white;
+}
+
+/* END MAAP STYLESHEET */
+
+/* BEGIN CUSTOM STYLESHEET */
+
+.entry-content code {
+    background: inherit;
+    color: inherit;
+    font-family: "Source Code Pro", monospace;
+    font-size: 1em;
+    border-left: 2px solid var(--color-blue-light);
+    margin-top: .5em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    padding-bottom: .5em;
+    max-width: 60em;
+}
+
+code, kbd, samp {
+      font-family: "Source Code Pro", monospace;
+}
+
+.site-header{
+	position: absolute;
+}
+
+.wp-custom-logo .title-area {
+    height: 60px;
+    width: inherit;
+}
+
+.site-header .custom-logo-link .custom-logo {
+    height: 60px;
+    width: auto;
+}
+
+.genesis-nav-menu a,
+.genesis-nav-menu .toggle-header-search {
+    font-family: "Ropa Sans", sans-serif;
+    font-size: 24px;
+    padding: 0px 20px;
+}
+
+.page-template-blocks .site-inner, .site-inner {
+    margin-top: 85px;
+    margin-bottom: 10px;
+}
+
+.entry-background {
+    margin-top: 10px;
+}
+
+.entry {
+    margin-bottom: 10px;
+}
+
+.entry-header .entry-avatar {
+    visibility: hidden;
+}
+
+.ab-container-content {
+    max-width: 3200px !important;
+}
+
+.home .ab-block-post-grid .ab-post-grid-item {
+    border-top: 6px solid var(--color-blue-dark);
+    padding-top: 20px;
+}
+
+.ab-block-container h3, .ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-title {
+    font-size: 30px;
+}
+
+.ab-block-post-grid .ab-block-post-grid-more-link {
+    font-family: "Ropa Sans", sans-serif;
+    font-size: 18px;
+}
+
+.ab-block-notice {
+  font-family: "Open Sans",sans-serif;
+}
+
+.ab-block-post-grid .ab-block-post-grid-more-link {
+	color: var(--color-blue-dark);
+}
+
+.nav-secondary .genesis-nav-menu a {
+    font-family: "Ropa Sans", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+	margin-right: 15px;
+}
+
+.nav-secondary .genesis-nav-menu li:before {
+	content: none;
+}
+
+#cmc * ol, #cmc * ul {
+    list-style-type: inherit;
+    margin-bottom: inherit;
+    margin-left: inherit;
+}
+
+#cmc * input[type=text], #cmc * input[type=password] {
+    border: 0;
+    border-radius: 0;
+    padding: 8px 6px;
+    margin: 0;
+}
+
+.container-border {
+	border: 1px solid #F2F2F2;
+}
+
+.icon-size-lg {
+	font-size: 16px;
+}
+
+.icon-margin-right {
+	margin-right: 8px
+}
+
+#profile-details {
+	word-break: normal;
+}
+
+#profile-details tr td {
+	padding: 12px;
+	vertical-align: top;
+}
+
+#profile-details tr td:first-child {
+	width: 25%;
+}
+
+.success-text {
+	color: var(--color-green-light);
+}
+
+.error-text {
+	color: var(--color-red-light);
+}
+
+/* Add cursor pointer for accordions to indicate they are clickable */
+.ab-block-accordion .ab-accordion-title {
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .wp-custom-logo .title-area {
+        height: 40px;
+        width: inherit;
+    }
+
+    .site-header .custom-logo-link .custom-logo {
+        height: 40px;
+        width: auto;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .nav-primary {
+        margin-top: 26px;
+    }
+    #menu-main-menu li+li { border-left: 1px solid var(--color-black) }
+    ul.sub-menu > .menu-item { border-left: 0 !important } /* I give up! */
+    #menu-footer-menu li+li { border-left: 1px solid var(--color-white) }
+}
+
+/* END CUSTOM STYLESHEET */
