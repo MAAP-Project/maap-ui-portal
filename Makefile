@@ -33,6 +33,9 @@ login-db: ## Open terminal window using db container
 login-www: ## Open terminal window using www container
 	docker exec -it $(WWW_CONTAINER_NAME) /bin/bash
 
+login-wpcli: ## Open terminal window using www container
+	docker exec -it maap-portal-wpcli /bin/bash
+
 open: ## open default browser to view the portal
 	open http://localhost:8080/
 
