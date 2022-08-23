@@ -1,5 +1,5 @@
 === Authorizer ===
-Contributors: figureone, the_magician, pkarjala, aargh-a-knot, elarequi, jojaba
+Contributors: figureone, the_magician, pkarjala, aargh-a-knot, elarequi, jojaba, slyraskal
 Tags: cas, ldap, google, google plus, login, authentication, authorization, access, education, limit login attempts, oauth
 Tested up to: 6.0
 Stable tag: trunk
@@ -61,6 +61,9 @@ The [University of Hawai'i][uh], which provides authentication for student, facu
 12. Authorizer Option overridden by a Network Admin Option.
 
 == Changelog ==
+
+= 3.4.1 =
+* Add setting to support CAS servers behind proxies. Props @slyraskal for the [pull request](https://github.com/uhm-coe/authorizer/pull/117)!
 
 = 3.4.0 =
 * Upgrade guzzlehttp from 7.4.2 to 7.4.5.
