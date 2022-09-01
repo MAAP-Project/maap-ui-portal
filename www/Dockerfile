@@ -1,4 +1,4 @@
-FROM wordpress:5.8.3-php7.4-apache
+FROM wordpress:6.0.2-php7.4-apache
 LABEL maintainer="support@maap-project.org"
 LABEL version="0.0.1"
 
